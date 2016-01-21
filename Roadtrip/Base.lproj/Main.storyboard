@@ -490,7 +490,7 @@
                                 <rect key="frame" x="0.0" y="22" width="320" height="286"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NKU-tk-yyl" id="857-hO-HRn">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="286"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="285.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GS-1C-xdL">
@@ -687,7 +687,7 @@ Subdisciplines of biology are defined by the scale at which organisms are studie
         <image name="termsofuse" width="231" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ffu-zy-1D8"/>
-        <segue reference="nfY-hK-3kl"/>
+        <segue reference="LZ9-fD-Mxh"/>
+        <segue reference="hgo-SA-Tmo"/>
     </inferredMetricsTieBreakers>
 </document>

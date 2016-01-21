@@ -36,7 +36,6 @@
 		80130DA51B2F7A6F00009276 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80130DA41B2F7A6F00009276 /* SignUpViewController.swift */; };
 		801A79DF1B3CC20E004EC713 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801A79DE1B3CC20E004EC713 /* ProfileViewController.swift */; };
 		801D4BA71B41E44900AC5607 /* location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801D4BA61B41E44900AC5607 /* location.swift */; };
-		801D4BAD1B41E57200AC5607 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801D4BAC1B41E57200AC5607 /* ContentViewController.swift */; };
 		801D4BB11B4204C900AC5607 /* DescViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801D4BB01B4204C900AC5607 /* DescViewController.swift */; };
 		807DD3131B66D8C400843379 /* CustomPFTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807DD3121B66D8C400843379 /* CustomPFTableViewCell.swift */; };
 		807DD3151B66E89000843379 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807DD3141B66E89000843379 /* DetailViewController.swift */; };
@@ -93,7 +92,6 @@
 		801A79DE1B3CC20E004EC713 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		801A79E61B3CCD3E004EC713 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = /Users/davidkrakauer/Desktop/Roadtrip/ParseUI.framework; sourceTree = "<absolute>"; };
 		801D4BA61B41E44900AC5607 /* location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = location.swift; sourceTree = "<group>"; };
-		801D4BAC1B41E57200AC5607 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentViewController.swift; path = Roadtrip/ContentViewController.swift; sourceTree = "<group>"; };
 		801D4BB01B4204C900AC5607 /* DescViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescViewController.swift; sourceTree = "<group>"; };
 		807DD3121B66D8C400843379 /* CustomPFTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPFTableViewCell.swift; sourceTree = "<group>"; };
 		807DD3141B66E89000843379 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = ../DetailViewController.swift; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 				80D955321B17B37600D98A0B /* Main.storyboard */,
 				80130D721B2634F100009276 /* OpenPageViewController.swift */,
 				807DD3141B66E89000843379 /* DetailViewController.swift */,
-				801D4BAC1B41E57200AC5607 /* ContentViewController.swift */,
 				80D9552E1B17B37500D98A0B /* AppDelegate.swift */,
 				80130D741B26373700009276 /* LogInViewController.swift */,
 				801A79DE1B3CC20E004EC713 /* ProfileViewController.swift */,
@@ -403,7 +400,6 @@
 			files = (
 				807DD3131B66D8C400843379 /* CustomPFTableViewCell.swift in Sources */,
 				80D837F11B74144400546EF2 /* AdminHomeViewController.swift in Sources */,
-				801D4BAD1B41E57200AC5607 /* ContentViewController.swift in Sources */,
 				801D4BB11B4204C900AC5607 /* DescViewController.swift in Sources */,
 				807DD3151B66E89000843379 /* DetailViewController.swift in Sources */,
 				801D4BA71B41E44900AC5607 /* location.swift in Sources */,
