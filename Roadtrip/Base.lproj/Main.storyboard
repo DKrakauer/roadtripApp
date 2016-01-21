@@ -482,7 +482,7 @@
             <objects>
                 <tableViewController id="rA2-US-20B" customClass="TableViewController" customModule="Roadtrip" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="286" sectionHeaderHeight="22" sectionFooterHeight="22" id="zQr-GM-tZe">
-                        <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -547,7 +547,7 @@
                         <viewControllerLayoutGuide type="bottom" id="v7v-Wc-opD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hqQ-jW-Wvx" userLabel="ContentView" customClass="DetailVIewController">
-                        <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="of0-Ii-BIg">

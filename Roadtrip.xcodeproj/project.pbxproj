@@ -75,7 +75,7 @@
 /* Begin PBXFileReference section */
 		7A37C72C1C3F89C4009FB9CA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		7A37C72E1C3F89DE009FB9CA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		80130D721B2634F100009276 /* OpenPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OpenPageViewController.swift; path = ../OpenPageViewController.swift; sourceTree = "<group>"; };
+		80130D721B2634F100009276 /* OpenPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenPageViewController.swift; sourceTree = "<group>"; };
 		80130D741B26373700009276 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		80130D821B26598500009276 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		80130D861B2EA10000009276 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 		801D4BA61B41E44900AC5607 /* location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = location.swift; sourceTree = "<group>"; };
 		801D4BB01B4204C900AC5607 /* DescViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescViewController.swift; sourceTree = "<group>"; };
 		807DD3121B66D8C400843379 /* CustomPFTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPFTableViewCell.swift; sourceTree = "<group>"; };
-		807DD3141B66E89000843379 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = ../DetailViewController.swift; sourceTree = "<group>"; };
+		807DD3141B66E89000843379 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8088D0AA1B45F73D0041A231 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		80BD4C061B338D48007794E6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		80BD4C071B338D48007794E6 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -201,7 +201,6 @@
 		80D955201B17B37500D98A0B = {
 			isa = PBXGroup;
 			children = (
-				80D837F01B74144400546EF2 /* AdminHomeViewController.swift */,
 				80BD4C0C1B338D7F007794E6 /* Frameworks */,
 				80D9552B1B17B37500D98A0B /* Roadtrip */,
 				80D955411B17B37600D98A0B /* RoadtripTests */,
@@ -223,6 +222,7 @@
 			children = (
 				80130D841B2EA0B300009276 /* Resources */,
 				80D955321B17B37600D98A0B /* Main.storyboard */,
+				80D837F01B74144400546EF2 /* AdminHomeViewController.swift */,
 				80130D721B2634F100009276 /* OpenPageViewController.swift */,
 				807DD3141B66E89000843379 /* DetailViewController.swift */,
 				80D9552E1B17B37500D98A0B /* AppDelegate.swift */,
