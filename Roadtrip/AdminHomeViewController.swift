@@ -16,7 +16,7 @@ class AdminHomeViewController: UIViewController {
         PFUser.logOut()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("OpenPageViewController") 
+        let vc = storyboard.instantiateViewControllerWithIdentifier("OpenPageViewController")
         self.presentViewController(vc, animated: true, completion: nil)
     }
     override func viewDidLoad() {

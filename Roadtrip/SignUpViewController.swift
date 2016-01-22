@@ -43,7 +43,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 newUser.email = desiredName
                 newUser.setObject(desiredEmail!, forKey:"realname")
                 newUser.setObject(wantsLetters, forKey:"getLetters")
-                newUser.setObject(false,forKey:"adminPower")
+                newUser.setObject(0,forKey:"adminPower")
                 
                 //Registering that user in Parse
                 newUser.signUpInBackgroundWithBlock {

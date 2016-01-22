@@ -51,7 +51,7 @@ class TableViewController: PFQueryTableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> CustomPFTableViewCell {
         
-        var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! CustomPFTableViewCell!
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! CustomPFTableViewCell!
         
         print("Loading Parse Database Files...")
         // Extract values from the PFObject to display in the table cell
@@ -62,10 +62,10 @@ class TableViewController: PFQueryTableViewController {
             cell?.authorTextLabel?.text = author
         }
         if let likes = object?["Likes"] as? Int {
-            var stringVal = String(likes)
+            let stringVal = String(likes)
             cell?.numLikes.text = stringVal
         }
-        var initialThumbnail = UIImage(named: "Unloaded")
+        let initialThumbnail = UIImage(named: "Unloaded")
         cell.customFlag.image = initialThumbnail
         if let thumbnail = object?["imageCover"] as? PFFile {
             cell.customFlag.file = thumbnail

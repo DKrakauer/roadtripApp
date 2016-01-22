@@ -192,7 +192,7 @@
                         <outlet property="emailField" destination="vNT-Ct-Sae" id="MkE-iw-Esh"/>
                         <outlet property="passField" destination="Wwl-fS-aw7" id="8rt-11-5Gz"/>
                         <segue destination="IIM-ap-T5J" kind="presentation" identifier="toHomePage" id="ffu-zy-1D8"/>
-                        <segue destination="KOX-hG-PoQ" kind="show" identifier="toAdminPage" id="Ang-V1-OYI"/>
+                        <segue destination="OdA-4T-WNX" kind="presentation" identifier="toAdminPage" id="cNk-pY-dGL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Li-a6-5gN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -437,9 +437,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="6hW-A2-Xs6" kind="presentation" id="o81-Gl-SDr"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Qr-5T-etB">
                                 <rect key="frame" x="53" y="171" width="246" height="38"/>
@@ -469,20 +466,17 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="WelcomeUser" destination="KBf-gp-egw" id="U9h-CJ-GRh"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0HW-9g-yvj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3137" y="1076"/>
+            <point key="canvasLocation" x="3618" y="1058"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="7LX-ze-LiM">
             <objects>
                 <tableViewController id="rA2-US-20B" customClass="TableViewController" customModule="Roadtrip" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="286" sectionHeaderHeight="22" sectionFooterHeight="22" id="zQr-GM-tZe">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -547,7 +541,7 @@
                         <viewControllerLayoutGuide type="bottom" id="v7v-Wc-opD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hqQ-jW-Wvx" userLabel="ContentView" customClass="DetailVIewController">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="of0-Ii-BIg">
@@ -592,37 +586,6 @@ Subdisciplines of biology are defined by the scale at which organisms are studie
             </objects>
             <point key="canvasLocation" x="4741" y="360"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="mRB-kU-XL8">
-            <objects>
-                <viewController id="6hW-A2-Xs6" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7VK-jb-ZVd"/>
-                        <viewControllerLayoutGuide type="bottom" id="GL9-Kl-YZQ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="IBZ-nF-hGw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="glf-fa-K0S">
-                                <rect key="frame" x="270" y="0.0" width="50" height="50"/>
-                                <state key="normal" image="close">
-                                    <attributedString key="attributedTitle"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Vj7-gn-FnA" kind="unwind" unwindAction="exitToAdminPage:" id="ND8-iW-nhf"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1t6-p0-GpP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Vj7-gn-FnA" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="3545" y="1076"/>
-        </scene>
         <!--Profile-->
         <scene sceneID="kwF-sq-XTz">
             <objects>
@@ -644,12 +607,12 @@ Subdisciplines of biology are defined by the scale at which organisms are studie
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S1f-1G-37q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3958" y="1076"/>
+            <point key="canvasLocation" x="4770" y="1076"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7XE-t9-AsZ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IIM-ap-T5J" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeNav Controller" automaticallyAdjustsScrollViewInsets="NO" id="IIM-ap-T5J" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -665,6 +628,25 @@ Subdisciplines of biology are defined by the scale at which organisms are studie
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z14-2y-C4V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3545" y="360"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Cfh-OM-kJ1">
+            <objects>
+                <navigationController storyboardIdentifier="AdminNav Controller" automaticallyAdjustsScrollViewInsets="NO" id="OdA-4T-WNX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="odP-Z4-Gfi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KOX-hG-PoQ" kind="relationship" relationship="rootViewController" id="zSv-XH-bLb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Stz-As-N8Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3137" y="1058"/>
         </scene>
     </scenes>
     <resources>
@@ -687,7 +669,7 @@ Subdisciplines of biology are defined by the scale at which organisms are studie
         <image name="termsofuse" width="231" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LZ9-fD-Mxh"/>
+        <segue reference="ffu-zy-1D8"/>
         <segue reference="hgo-SA-Tmo"/>
     </inferredMetricsTieBreakers>
 </document>

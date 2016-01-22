@@ -23,20 +23,29 @@ class LogInViewController: UIViewController {
     @IBAction func loginButtonPress(sender: AnyObject) {
         print("Logging in user...")
         if (emailField.text != "" && passField.text != "") {
+            print("Fields are filled")
+            print("Begining login")
             PFUser.logInWithUsernameInBackground(emailField.text!, password:passField.text!) {
                 (user: PFUser?, error: NSError?) -> Void in
                 if user != nil {
                     // Yes, User Exists
-                    let isAdmin = PFUser.currentUser()?.objectForKey("adminPower")
-                    print(isAdmin)
-                        if(isAdmin as! Bool){
-                        print("got through the if")
-                        self.performSegueWithIdentifier("toAdminPage", sender: self)
-                    }else{
-                        print("what!")
-                    self.performSegueWithIdentifier("toHomePage", sender: self)
+                    print("Checking if user is an admin")
+                    if let isAdmin = PFUser.currentUser()?.objectForKey("adminPower") as? Int {
+                        if isAdmin == 1 {
+                            print("User is an admin")
+                            print("Logging in as admin")
+                            self.performSegueWithIdentifier("toAdminPage", sender: self)
+                            print("Finished logging in")
+                        }else{
+                            print("User is not an admin")
+                            print("Logging in as non-admin")
+                            self.performSegueWithIdentifier("toHomePage", sender: self)
+                            print("Finished logging in")
+                        }
                     }
+                    
                 } else {
+                    print("No User with that username and password")
                     // No, User Doesn't Exist
                     self.alertLabel.text = "Either the username or password is incorrect!"
                     AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))

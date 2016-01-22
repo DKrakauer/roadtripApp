@@ -16,11 +16,11 @@ class HomeViewController: UIViewController {
     @IBAction func logOut(sender: AnyObject) {
         PFUser.logOut()
         
-       /* let storyboard = UIStoryboard(name: "Main", bundle: nil)
+       let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("OpenPageViewController")
-        self.presentViewController(vc, animated: true, completion: nil)*/
+        self.presentViewController(vc, animated: true, completion: nil)
         
-        performSegueWithIdentifier("toLogin", sender: self)
+       
         
         
     }
@@ -48,10 +48,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
-/*
-        if(PFUser.currentUser()?.objectForKey("adminPower") as! Bool){
-            self.performSegueWithIdentifier("toAdminPage", sender: self)
-        }*/
+
 
         
         

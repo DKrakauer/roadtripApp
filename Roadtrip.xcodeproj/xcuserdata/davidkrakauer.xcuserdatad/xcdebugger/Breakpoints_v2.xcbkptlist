@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Roadtrip/LogInViewController.swift"
-            timestampString = "475026308.9319"
+            timestampString = "475190385.676515"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "loginButtonPress(_:)"
             landmarkType = "5">
          </BreakpointContent>
