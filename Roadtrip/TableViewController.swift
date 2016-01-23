@@ -82,17 +82,10 @@ class TableViewController: PFQueryTableViewController {
     
     
     //Original prepareForSegue
-   /* override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        // Get the new view controller using [segue destinationViewController].
-        var detailScene = segue.destinationViewController as! DetailViewController
-        
-        // Pass the selected object to the destination view controller.
-        if let indexPath = self.tableView.indexPathForSelectedRow! {
-            let row = Int(indexPath.row)
-            detailScene.currentObject = (objects?[row] as! PFObject)
-        }
-    }*/
+   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    
+    
+    }
 }
 
 

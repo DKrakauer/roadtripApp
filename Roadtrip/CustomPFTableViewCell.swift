@@ -19,6 +19,8 @@ class CustomPFTableViewCell: PFTableViewCell {
     @IBOutlet weak var customFlag: PFImageView!
     
     
+    
+    
 
     /*
     // Only override drawRect: if you perform custom drawing.

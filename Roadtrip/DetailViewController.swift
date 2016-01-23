@@ -21,34 +21,8 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        if let object = currentObject {
-            name.text = object["Name"] as? String
-            
-            let likesString = object["Likes"] as? String
-            let stringVal = String(stringInterpolationSegment: likesString)
-            likes.text = stringVal
-            
-            author.text = object["authorName"] as? String
-            descrip.text = object["Description"] as? String
-        }
+        name.text = currentObject?.objectForKey("Name") as? String
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
 }
