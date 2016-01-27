@@ -11,6 +11,12 @@ import ParseUI
 
 class TableViewController: PFQueryTableViewController {
     
+    var passName = ""
+    var passAuthor = ""
+    var passLikes = 0
+    var passDescrip = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,13 +63,19 @@ class TableViewController: PFQueryTableViewController {
         // Extract values from the PFObject to display in the table cell
         if let name = object?["Name"] as? String {
             cell?.nameTextLabel?.text = name
+            passName = name
         }
         if let author = object?["authorName"] as? String {
             cell?.authorTextLabel?.text = author
+            passAuthor = author
         }
         if let likes = object?["Likes"] as? Int {
             let stringVal = String(likes)
             cell?.numLikes.text = stringVal
+            passLikes = likes
+        }
+        if let descrip = object?["Derscription"] as? String {
+            passDescrip = descrip
         }
         let initialThumbnail = UIImage(named: "Unloaded")
         cell.customFlag.image = initialThumbnail
@@ -82,9 +94,17 @@ class TableViewController: PFQueryTableViewController {
     
     
     //Original prepareForSegue
-   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "toDetailScene") {
+            
+            // initialize new view controller and cast it as your view controller
+            let viewController = segue.destinationViewController as! DetailViewController
+            
+            viewController.tripName = passName
+            viewController.tripAuthor = passAuthor
+            viewController.tripLikes = passLikes
+            viewController.tripDescrip = passDescrip
+        }
     }
 }
 

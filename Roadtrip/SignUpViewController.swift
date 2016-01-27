@@ -37,7 +37,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 //Passwords match and all fields have info
                 
                 //adding new user to parse
-                var newUser = PFUser()
+                let newUser = PFUser()
                 newUser.username = desiredName
                 newUser.password = desiredPass
                 newUser.email = desiredName
@@ -54,6 +54,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                         }
                     }else{
                         if let message: AnyObject = error!.userInfo["error"] {
+                            print(message)
                         }				
                     }
                 }

@@ -19,9 +19,21 @@ class DetailViewController: UIViewController {
     
     var currentObject : PFObject?
     
+    var tripName = ""
+    var tripAuthor = ""
+    var tripLikes = 0
+    var tripDescrip = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        name.text = currentObject?.objectForKey("Name") as? String
+        
+        name.text = tripName
+        likes.text = String(tripLikes)
+        author.text = tripAuthor
+        descrip.text = tripDescrip
+        
+        //Description?
+        
     }
 
    
