@@ -87,6 +87,7 @@ class TableViewController: PFQueryTableViewController {
         }
         print("Finished!")
         
+        
         return cell
     }
     
