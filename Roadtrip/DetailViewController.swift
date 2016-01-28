@@ -15,7 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var likes: UILabel!
     @IBOutlet weak var author: UILabel!
-    @IBOutlet weak var descrip: UILabel!
+    
     
     var currentObject : PFObject?
     
@@ -30,7 +30,7 @@ class DetailViewController: UIViewController {
         name.text = tripName
         likes.text = String(tripLikes)
         author.text = tripAuthor
-        descrip.text = tripDescrip
+        
         
         //Description?
         
