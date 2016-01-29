@@ -12,29 +12,32 @@ import Parse
 
 class DetailViewController: UIViewController {
 
+    //IBOutlets
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var likes: UILabel!
     @IBOutlet weak var author: UILabel!
+    @IBOutlet weak var descrip: UITextView!
+
     
-    
-    var currentObject : PFObject?
-    
+    //Place-Holder Variables
     var tripName = ""
     var tripAuthor = ""
     var tripLikes = 0
     var tripDescrip = ""
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Hooking up Place-Holders
         name.text = tripName
         likes.text = String(tripLikes)
         author.text = tripAuthor
+        descrip.text = tripDescrip
         
-        
-        //Description?
+        //Design correction
+        descrip.textColor = UIColor.whiteColor()
         
     }
-
-   
 }

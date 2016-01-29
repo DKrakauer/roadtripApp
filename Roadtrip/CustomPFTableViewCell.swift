@@ -18,16 +18,6 @@ class CustomPFTableViewCell: PFTableViewCell {
     @IBOutlet weak var numLikes: UILabel!
     @IBOutlet weak var customFlag: PFImageView!
     
-    
-    
-    
-
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
+    var descriptionHolder = ""
 
 }

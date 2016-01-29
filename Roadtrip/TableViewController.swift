@@ -11,12 +11,6 @@ import ParseUI
 
 class TableViewController: PFQueryTableViewController {
     
-    var passName = ""
-    var passAuthor = ""
-    var passLikes = 0
-    var passDescrip = ""
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,16 +33,6 @@ class TableViewController: PFQueryTableViewController {
         self.objectsPerPage = 5
 
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     override func queryForTable() -> PFQuery {
         let query = PFQuery(className: "Location")
         query.orderByAscending("Name")
@@ -63,19 +47,17 @@ class TableViewController: PFQueryTableViewController {
         // Extract values from the PFObject to display in the table cell
         if let name = object?["Name"] as? String {
             cell?.nameTextLabel?.text = name
-            passName = name
+            print("Loading " + name)
         }
         if let author = object?["authorName"] as? String {
             cell?.authorTextLabel?.text = author
-            passAuthor = author
         }
         if let likes = object?["Likes"] as? Int {
             let stringVal = String(likes)
             cell?.numLikes.text = stringVal
-            passLikes = likes
         }
-        if let descrip = object?["Derscription"] as? String {
-            passDescrip = descrip
+        if let descrip = object?["Description"] as? String {
+            cell?.descriptionHolder = descrip
         }
         let initialThumbnail = UIImage(named: "Unloaded")
         cell.customFlag.image = initialThumbnail
@@ -85,7 +67,7 @@ class TableViewController: PFQueryTableViewController {
             
             
         }
-        print("Finished!")
+        print("Finished loading!")
         
         
         return cell
@@ -93,18 +75,22 @@ class TableViewController: PFQueryTableViewController {
     
     
     
-    
     //Original prepareForSegue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "toDetailScene") {
             
-            // initialize new view controller and cast it as your view controller
+            
+            //Hooking up places-holder values
             let viewController = segue.destinationViewController as! DetailViewController
             
-            viewController.tripName = passName
-            viewController.tripAuthor = passAuthor
-            viewController.tripLikes = passLikes
-            viewController.tripDescrip = passDescrip
+            let cell = sender as! CustomPFTableViewCell
+            
+            
+            viewController.tripName = cell.nameTextLabel.text!
+            viewController.tripAuthor = cell.authorTextLabel.text!
+            viewController.tripLikes = Int(cell.numLikes.text!)!
+            viewController.tripDescrip = cell.descriptionHolder
+            
         }
     }
 }

@@ -511,7 +511,7 @@
                                     <outlet property="customFlag" destination="nrG-JS-XUi" id="VYu-iM-wgU"/>
                                     <outlet property="nameTextLabel" destination="9GS-1C-xdL" id="oFA-eL-i4O"/>
                                     <outlet property="numLikes" destination="32D-Ye-vdA" id="hDp-iw-Cnn"/>
-                                    <segue destination="VRH-82-3AI" kind="show" identifier="toDetailScene" id="x7j-yO-LFg"/>
+                                    <segue destination="VRH-82-3AI" kind="show" identifier="toDetailScene" id="vf5-6G-irF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -561,9 +561,15 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2Y-fk-j3d">
                                 <rect key="frame" x="230" y="72" width="70" height="21"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="11"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Loading article..." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4I-5D-1TP">
+                                <rect key="frame" x="20" y="120" width="280" height="384"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -571,6 +577,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="author" destination="aG4-2G-Gd9" id="9Vw-vM-Lkc"/>
+                        <outlet property="descrip" destination="R4I-5D-1TP" id="VtM-8Q-9qq"/>
                         <outlet property="likes" destination="d2Y-fk-j3d" id="8It-n0-TKc"/>
                         <outlet property="name" destination="of0-Ii-BIg" id="SJZ-3u-T4T"/>
                     </connections>
@@ -639,6 +646,6 @@
         <image name="termsofuse" width="231" height="26"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TiJ-G0-VGH"/>
+        <segue reference="LZ9-fD-Mxh"/>
     </inferredMetricsTieBreakers>
 </document>
