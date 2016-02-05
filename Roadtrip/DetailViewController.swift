@@ -17,6 +17,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var likes: UILabel!
     @IBOutlet weak var author: UILabel!
     @IBOutlet weak var descrip: UITextView!
+    @IBOutlet weak var scroll: UIScrollView!
 
     
     //Place-Holder Variables
@@ -29,6 +30,8 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scroll.contentSize.height = 1000
         
         //Hooking up Place-Holders
         name.text = tripName

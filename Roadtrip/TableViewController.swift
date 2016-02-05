@@ -69,9 +69,10 @@ class TableViewController: PFQueryTableViewController {
         }
         print("Finished loading!")
         
-        
         return cell
     }
+    
+    
     
     
     
