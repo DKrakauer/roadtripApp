@@ -19,5 +19,12 @@ class CustomPFTableViewCell: PFTableViewCell {
     @IBOutlet weak var customFlag: PFImageView!
     
     var descriptionHolder = ""
+    
+    func viewDidLoad() {
+        
+        
+        
+    }
+    
 
 }
