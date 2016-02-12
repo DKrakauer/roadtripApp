@@ -10,6 +10,7 @@
 		7A03D4F51C403884007F8023 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801A79E61B3CCD3E004EC713 /* ParseUI.framework */; };
 		7A37C72D1C3F89C4009FB9CA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A37C72C1C3F89C4009FB9CA /* libsqlite3.tbd */; };
 		7A37C72F1C3F89DE009FB9CA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A37C72E1C3F89DE009FB9CA /* libz.tbd */; };
+		7AADAA501C6E33010058E870 /* FirstPFTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADAA4F1C6E33010058E870 /* FirstPFTableViewCell.swift */; };
 		80130D731B2634F100009276 /* OpenPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80130D721B2634F100009276 /* OpenPageViewController.swift */; };
 		80130D751B26373700009276 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80130D741B26373700009276 /* LogInViewController.swift */; };
 		80130D831B26598500009276 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80130D821B26598500009276 /* HomeViewController.swift */; };
@@ -75,6 +76,7 @@
 /* Begin PBXFileReference section */
 		7A37C72C1C3F89C4009FB9CA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		7A37C72E1C3F89DE009FB9CA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		7AADAA4F1C6E33010058E870 /* FirstPFTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstPFTableViewCell.swift; sourceTree = "<group>"; };
 		80130D721B2634F100009276 /* OpenPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenPageViewController.swift; sourceTree = "<group>"; };
 		80130D741B26373700009276 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		80130D821B26598500009276 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				801D4BB01B4204C900AC5607 /* DescViewController.swift */,
 				807DD3121B66D8C400843379 /* CustomPFTableViewCell.swift */,
 				8088D0AA1B45F73D0041A231 /* TableViewController.swift */,
+				7AADAA4F1C6E33010058E870 /* FirstPFTableViewCell.swift */,
 				801D4BA61B41E44900AC5607 /* location.swift */,
 				80130DA41B2F7A6F00009276 /* SignUpViewController.swift */,
 				80130D821B26598500009276 /* HomeViewController.swift */,
@@ -400,6 +403,7 @@
 			files = (
 				807DD3131B66D8C400843379 /* CustomPFTableViewCell.swift in Sources */,
 				80D837F11B74144400546EF2 /* AdminHomeViewController.swift in Sources */,
+				7AADAA501C6E33010058E870 /* FirstPFTableViewCell.swift in Sources */,
 				801D4BB11B4204C900AC5607 /* DescViewController.swift in Sources */,
 				807DD3151B66E89000843379 /* DetailViewController.swift in Sources */,
 				801D4BA71B41E44900AC5607 /* location.swift in Sources */,
@@ -546,7 +550,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Users/rkrakauer/Downloads,
 				);
 				INFOPLIST_FILE = Roadtrip/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -11,10 +11,11 @@ import ParseUI
 
 class TableViewController: PFQueryTableViewController {
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBarHidden = false
+        self.navigationController?.navigationBarHidden = true
     }
     
     // Initialise the PFQueryTable tableview
@@ -31,16 +32,18 @@ class TableViewController: PFQueryTableViewController {
         self.pullToRefreshEnabled = true
         self.paginationEnabled = true
         self.objectsPerPage = 5
-
+        
     }
-    override func queryForTable() -> PFQuery {
+    
+    func queryForTable(sender: UITextField) -> PFQuery {
+        
         let query = PFQuery(className: "Location")
         query.orderByAscending("Name")
         return query
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> CustomPFTableViewCell {
-        
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell {
+        if(indexPath.row >= 1){
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! CustomPFTableViewCell!
         
         print("Loading Parse Database Files...")
@@ -64,15 +67,27 @@ class TableViewController: PFQueryTableViewController {
         if let thumbnail = object?["imageCover"] as? PFFile {
             cell.customFlag.file = thumbnail
             cell.customFlag.loadInBackground()
-            
-            
         }
-        
+            return cell
+        }
         
         print("Finished loading!")
         
+    
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("firstCell") as! PFTableViewCell
         return cell
     }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 104
+        }else{
+            return 274
+        }
+    }
+    
+    
     
     
     
@@ -95,6 +110,9 @@ class TableViewController: PFQueryTableViewController {
             viewController.tripDescrip = cell.descriptionHolder
             
         }
+    }
+    @IBAction func exitToFeedSceneViewController(segue:UIStoryboardSegue) {
+        
     }
 }
 
