@@ -15,6 +15,8 @@ class TableViewController: PFQueryTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         self.navigationController?.navigationBarHidden = true
     }
     
@@ -36,8 +38,7 @@ class TableViewController: PFQueryTableViewController {
     }
     
     func queryForTable(sender: UITextField) -> PFQuery {
-        
-        let query = PFQuery(className: "Location")
+                let query = PFQuery(className: "Location")
         query.orderByAscending("Name")
         return query
     }
@@ -47,7 +48,6 @@ class TableViewController: PFQueryTableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! CustomPFTableViewCell!
         
         print("Loading Parse Database Files...")
-        // Extract values from the PFObject to display in the table cell
         if let name = object?["Name"] as? String {
             cell?.nameTextLabel?.text = name
             print("Loading " + name)

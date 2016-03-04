@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		7A03D4F51C403884007F8023 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801A79E61B3CCD3E004EC713 /* ParseUI.framework */; };
+		7A28B0B21C8A37CE00FC65E5 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A28B0B01C8A37CE00FC65E5 /* Fabric.framework */; };
+		7A28B0B31C8A37CF00FC65E5 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A28B0B11C8A37CE00FC65E5 /* Crashlytics.framework */; };
 		7A37C72D1C3F89C4009FB9CA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A37C72C1C3F89C4009FB9CA /* libsqlite3.tbd */; };
 		7A37C72F1C3F89DE009FB9CA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A37C72E1C3F89DE009FB9CA /* libz.tbd */; };
+		7A94CE081C6E808000841627 /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A94CE071C6E808000841627 /* ImagePickerViewController.swift */; };
 		7AADAA501C6E33010058E870 /* FirstPFTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AADAA4F1C6E33010058E870 /* FirstPFTableViewCell.swift */; };
 		80130D731B2634F100009276 /* OpenPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80130D721B2634F100009276 /* OpenPageViewController.swift */; };
 		80130D751B26373700009276 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80130D741B26373700009276 /* LogInViewController.swift */; };
@@ -74,8 +77,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A28B0B01C8A37CE00FC65E5 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		7A28B0B11C8A37CE00FC65E5 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		7A37C72C1C3F89C4009FB9CA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		7A37C72E1C3F89DE009FB9CA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		7A94CE071C6E808000841627 /* ImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
 		7AADAA4F1C6E33010058E870 /* FirstPFTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstPFTableViewCell.swift; sourceTree = "<group>"; };
 		80130D721B2634F100009276 /* OpenPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenPageViewController.swift; sourceTree = "<group>"; };
 		80130D741B26373700009276 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -128,12 +134,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A37C72F1C3F89DE009FB9CA /* libz.tbd in Frameworks */,
+				7A28B0B31C8A37CF00FC65E5 /* Crashlytics.framework in Frameworks */,
 				7A37C72D1C3F89C4009FB9CA /* libsqlite3.tbd in Frameworks */,
 				80BD4C1A1B338E2C007794E6 /* AudioToolbox.framework in Frameworks */,
 				80BD4C1B1B338E2C007794E6 /* CFNetwork.framework in Frameworks */,
 				80BD4C1C1B338E2C007794E6 /* CoreGraphics.framework in Frameworks */,
 				80BD4C1D1B338E2C007794E6 /* CoreLocation.framework in Frameworks */,
 				80BD4C201B338E2C007794E6 /* MobileCoreServices.framework in Frameworks */,
+				7A28B0B21C8A37CE00FC65E5 /* Fabric.framework in Frameworks */,
 				80BD4C211B338E2C007794E6 /* QuartzCore.framework in Frameworks */,
 				80BD4C221B338E2C007794E6 /* Security.framework in Frameworks */,
 				80BD4C241B338E2C007794E6 /* SystemConfiguration.framework in Frameworks */,
@@ -183,6 +191,8 @@
 		80BD4C0C1B338D7F007794E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A28B0B01C8A37CE00FC65E5 /* Fabric.framework */,
+				7A28B0B11C8A37CE00FC65E5 /* Crashlytics.framework */,
 				801A79E61B3CCD3E004EC713 /* ParseUI.framework */,
 				7A37C72E1C3F89DE009FB9CA /* libz.tbd */,
 				7A37C72C1C3F89C4009FB9CA /* libsqlite3.tbd */,
@@ -230,6 +240,7 @@
 				80D9552E1B17B37500D98A0B /* AppDelegate.swift */,
 				80130D741B26373700009276 /* LogInViewController.swift */,
 				801A79DE1B3CC20E004EC713 /* ProfileViewController.swift */,
+				7A94CE071C6E808000841627 /* ImagePickerViewController.swift */,
 				801D4BB01B4204C900AC5607 /* DescViewController.swift */,
 				807DD3121B66D8C400843379 /* CustomPFTableViewCell.swift */,
 				8088D0AA1B45F73D0041A231 /* TableViewController.swift */,
@@ -281,6 +292,7 @@
 				80D955251B17B37500D98A0B /* Sources */,
 				80D955261B17B37500D98A0B /* Frameworks */,
 				80D955271B17B37500D98A0B /* Resources */,
+				7A28B0AF1C8A379600FC65E5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -396,6 +408,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7A28B0AF1C8A379600FC65E5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 226e9f70d98630f83d5a7899773e7a74060eefb1 6be4ce091c3b5880b9f1e4fa1f97f7acb1473cdef79054a93c059c5b30170e22";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		80D955251B17B37500D98A0B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -407,6 +435,7 @@
 				801D4BB11B4204C900AC5607 /* DescViewController.swift in Sources */,
 				807DD3151B66E89000843379 /* DetailViewController.swift in Sources */,
 				801D4BA71B41E44900AC5607 /* location.swift in Sources */,
+				7A94CE081C6E808000841627 /* ImagePickerViewController.swift in Sources */,
 				8088D0AB1B45F73D0041A231 /* TableViewController.swift in Sources */,
 				80130DA51B2F7A6F00009276 /* SignUpViewController.swift in Sources */,
 				80130D831B26598500009276 /* HomeViewController.swift in Sources */,
