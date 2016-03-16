@@ -714,7 +714,7 @@
                         <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="vQx-pZ-hEo">
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Have a place in mind?" id="vQx-pZ-hEo">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="barTintColor" red="0.96361665575916233" green="0.96361665575916233" blue="0.96361665575916233" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
@@ -743,7 +743,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" minimumFontSize="17" background="help" translatesAutoresizingMaskIntoConstraints="NO" id="le4-wZ-kj6">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Have a place in mind?" minimumFontSize="17" background="help" translatesAutoresizingMaskIntoConstraints="NO" id="le4-wZ-kj6">
                                             <rect key="frame" x="42" y="37" width="237" height="30"/>
                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -805,6 +805,9 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="searchBar" destination="vQx-pZ-hEo" id="ABj-XD-E45"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QpR-yR-aNm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="AX9-ec-1yg" userLabel="Exit" sceneMemberID="exit"/>

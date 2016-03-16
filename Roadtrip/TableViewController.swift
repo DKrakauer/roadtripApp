@@ -9,24 +9,33 @@ import UIKit
 import Parse
 import ParseUI
 
-class TableViewController: PFQueryTableViewController {
+class TableViewController:PFQueryTableViewController,
+    UISearchBarDelegate,
+    UISearchDisplayDelegate{
     
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        print("1")
         
         self.navigationController?.navigationBarHidden = true
+        
+        
     }
     
     // Initialise the PFQueryTable tableview
     override init(style: UITableViewStyle, className: String!) {
         super.init(style: style, className: className)
+        
+        print("2")
     }
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
+        
+        
         
         // Configure the PFQueryTableView
         self.parseClassName = "Location"

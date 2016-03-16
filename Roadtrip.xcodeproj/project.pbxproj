@@ -10,6 +10,7 @@
 		7A03D4F51C403884007F8023 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801A79E61B3CCD3E004EC713 /* ParseUI.framework */; };
 		7A28B0B21C8A37CE00FC65E5 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A28B0B01C8A37CE00FC65E5 /* Fabric.framework */; };
 		7A28B0B31C8A37CF00FC65E5 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A28B0B11C8A37CE00FC65E5 /* Crashlytics.framework */; };
+		7A28B0B51C8A4FEA00FC65E5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A28B0B41C8A4FEA00FC65E5 /* MapKit.framework */; };
 		7A37C72D1C3F89C4009FB9CA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A37C72C1C3F89C4009FB9CA /* libsqlite3.tbd */; };
 		7A37C72F1C3F89DE009FB9CA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A37C72E1C3F89DE009FB9CA /* libz.tbd */; };
 		7A94CE081C6E808000841627 /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A94CE071C6E808000841627 /* ImagePickerViewController.swift */; };
@@ -79,6 +80,7 @@
 /* Begin PBXFileReference section */
 		7A28B0B01C8A37CE00FC65E5 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		7A28B0B11C8A37CE00FC65E5 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		7A28B0B41C8A4FEA00FC65E5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7A37C72C1C3F89C4009FB9CA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		7A37C72E1C3F89DE009FB9CA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		7A94CE071C6E808000841627 /* ImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
@@ -133,13 +135,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A28B0B51C8A4FEA00FC65E5 /* MapKit.framework in Frameworks */,
+				80BD4C1D1B338E2C007794E6 /* CoreLocation.framework in Frameworks */,
 				7A37C72F1C3F89DE009FB9CA /* libz.tbd in Frameworks */,
 				7A28B0B31C8A37CF00FC65E5 /* Crashlytics.framework in Frameworks */,
 				7A37C72D1C3F89C4009FB9CA /* libsqlite3.tbd in Frameworks */,
 				80BD4C1A1B338E2C007794E6 /* AudioToolbox.framework in Frameworks */,
 				80BD4C1B1B338E2C007794E6 /* CFNetwork.framework in Frameworks */,
 				80BD4C1C1B338E2C007794E6 /* CoreGraphics.framework in Frameworks */,
-				80BD4C1D1B338E2C007794E6 /* CoreLocation.framework in Frameworks */,
 				80BD4C201B338E2C007794E6 /* MobileCoreServices.framework in Frameworks */,
 				7A28B0B21C8A37CE00FC65E5 /* Fabric.framework in Frameworks */,
 				80BD4C211B338E2C007794E6 /* QuartzCore.framework in Frameworks */,
@@ -191,6 +194,7 @@
 		80BD4C0C1B338D7F007794E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A28B0B41C8A4FEA00FC65E5 /* MapKit.framework */,
 				7A28B0B01C8A37CE00FC65E5 /* Fabric.framework */,
 				7A28B0B11C8A37CE00FC65E5 /* Crashlytics.framework */,
 				801A79E61B3CCD3E004EC713 /* ParseUI.framework */,
@@ -336,6 +340,9 @@
 						CreatedOnToolsVersion = 6.3.2;
 						DevelopmentTeam = 4XWE232KT8;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.InAppPurchase = {
 								enabled = 0;
 							};
