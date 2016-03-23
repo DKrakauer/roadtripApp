@@ -11,7 +11,7 @@ import Parse
 import ParseUI
 import UIKit
 
-class FirstPFTableViewCell: PFTableViewCell {
+class FirstPFTableViewCell: UITableViewCell {
 
     @IBOutlet weak var searchBox: UITextField!
     

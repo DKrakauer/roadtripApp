@@ -754,7 +754,7 @@
                                     <outlet property="searchBox" destination="le4-wZ-kj6" id="P0w-az-7is"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="274" id="NKU-tk-yyl" customClass="CustomPFTableViewCell" customModule="Roadtrip" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell2" rowHeight="274" id="NKU-tk-yyl" customClass="CustomPFTableViewCell" customModule="Roadtrip" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="170" width="320" height="274"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NKU-tk-yyl" id="857-hO-HRn">

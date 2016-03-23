@@ -11,7 +11,7 @@ import Parse
 import ParseUI
 
 
-class CustomPFTableViewCell: PFTableViewCell {
+class CustomPFTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameTextLabel: UILabel!
     @IBOutlet weak var authorTextLabel: UILabel!

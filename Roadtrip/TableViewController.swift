@@ -9,92 +9,75 @@ import UIKit
 import Parse
 import ParseUI
 
-class TableViewController:PFQueryTableViewController,
-    UISearchBarDelegate,
+class TableViewController:UITableViewController, UISearchBarDelegate,
     UISearchDisplayDelegate{
     
     @IBOutlet weak var searchBar: UISearchBar!
+    var searchActive : Bool = false
+    var data:[PFObject]!
+    var filtered:[PFObject]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("1")
+        searchBar.delegate = self
         
         self.navigationController?.navigationBarHidden = true
         
+        search()
         
     }
     
-    // Initialise the PFQueryTable tableview
-    override init(style: UITableViewStyle, className: String!) {
-        super.init(style: style, className: className)
-        
-        print("2")
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)!
-        
-        
-        
-        // Configure the PFQueryTableView
-        self.parseClassName = "Location"
-        self.textKey = "Name"
-        self.pullToRefreshEnabled = true
-        self.paginationEnabled = true
-        self.objectsPerPage = 5
+    func search(searchText: String? = nil){
+        let query = PFQuery(className: "Location")
+        if(searchText != nil){
+            query.whereKey("Name", containsString: searchText)
+        }
+        query.findObjectsInBackgroundWithBlock { (results, error) -> Void in
+            self.data = results as [PFObject]!
+            self.tableView.reloadData()
+        }
         
     }
     
-    func queryForTable(sender: UITextField) -> PFQuery {
-                let query = PFQuery(className: "Location")
-        query.orderByAscending("Name")
-        return query
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(self.data != nil){
+            return self.data.count
+        }
+        return 0
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell {
-        if(indexPath.row >= 1){
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! CustomPFTableViewCell!
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let obj = self.data[indexPath.row]
         
-        print("Loading Parse Database Files...")
-        if let name = object?["Name"] as? String {
-            cell?.nameTextLabel?.text = name
-            print("Loading " + name)
+        let cell2 = tableView.dequeueReusableCellWithIdentifier("Cell2") as! CustomPFTableViewCell!
+        
+        
+        
+        if let author = obj["authorName"] as? String {
+            cell2?.authorTextLabel?.text = author
         }
-        if let author = object?["authorName"] as? String {
-            cell?.authorTextLabel?.text = author
+        if let name = obj["Name"] as? String {
+            cell2?.nameTextLabel?.text = name
         }
-        if let likes = object?["Likes"] as? Int {
-            let stringVal = String(likes)
-            cell?.numLikes.text = stringVal
+        if let likes = obj["Likes"] as? String {
+            cell2?.numLikes?.text = likes
         }
-        if let descrip = object?["Description"] as? String {
-            cell?.descriptionHolder = descrip
+        if let thumbnail = obj["imageCover"] as? PFFile {
+            cell2.customFlag.file = thumbnail
+            cell2.customFlag.loadInBackground()
         }
-        let initialThumbnail = UIImage(named: "Unloaded")
-        cell.customFlag.image = initialThumbnail
-        if let thumbnail = object?["imageCover"] as? PFFile {
-            cell.customFlag.file = thumbnail
-            cell.customFlag.loadInBackground()
-        }
-            return cell
+        if let likesn = obj["Likes"] as? Int {
+            cell2?.authorTextLabel?.text = String(likesn)
         }
         
-        print("Finished loading!")
+        //cell.authorLabel!.text = obj[""]
         
-    
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier("firstCell") as! PFTableViewCell
-        return cell
+        return cell2
     }
+
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return 104
-        }else{
-            return 274
-        }
-    }
+    
     
     
     
@@ -115,11 +98,65 @@ class TableViewController:PFQueryTableViewController,
             
             viewController.tripName = cell.nameTextLabel.text!
             viewController.tripAuthor = cell.authorTextLabel.text!
-            viewController.tripLikes = Int(cell.numLikes.text!)!
+            if let text = cell.numLikes.text {
+                if let textInt = Int(text) {
+                    viewController.tripLikes = textInt
+                } else {
+                    viewController.tripLikes = 0
+                }
+            } else {
+                viewController.tripLikes = 0
+            }
             viewController.tripDescrip = cell.descriptionHolder
             
         }
     }
+    
+    
+    
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        searchActive = true;
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        search(searchText)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     @IBAction func exitToFeedSceneViewController(segue:UIStoryboardSegue) {
         
     }
