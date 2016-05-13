@@ -22,10 +22,13 @@ class TableViewController:UITableViewController, UISearchBarDelegate,
         
         searchBar.delegate = self
         
-        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.navigationBarHidden = false
         
         search()
         
+    }
+    override func viewDidAppear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = false
     }
     
     func search(searchText: String? = nil){
@@ -48,6 +51,7 @@ class TableViewController:UITableViewController, UISearchBarDelegate,
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let obj = self.data[indexPath.row]
         
         let cell2 = tableView.dequeueReusableCellWithIdentifier("Cell2") as! CustomPFTableViewCell!
@@ -60,35 +64,26 @@ class TableViewController:UITableViewController, UISearchBarDelegate,
         if let name = obj["Name"] as? String {
             cell2?.nameTextLabel?.text = name
         }
-        if let likes = obj["Likes"] as? String {
-            cell2?.numLikes?.text = likes
+        if let likes = obj["Likes"] as? Int {
+            cell2?.numLikes?.text = String(likes)
         }
         if let thumbnail = obj["imageCover"] as? PFFile {
             cell2.customFlag.file = thumbnail
             cell2.customFlag.loadInBackground()
         }
-        if let likesn = obj["Likes"] as? Int {
-            cell2?.authorTextLabel?.text = String(likesn)
+        if let descrip = obj["Description"] as? String {
+            cell2.descriptionHolder = descrip
         }
+        
         
         //cell.authorLabel!.text = obj[""]
         
         return cell2
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //Original prepareForSegue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "toDetailScene") {
-            
+            self.navigationController?.navigationBarHidden = true
             
             //Hooking up places-holder values
             let viewController = segue.destinationViewController as! DetailViewController
@@ -134,28 +129,6 @@ class TableViewController:UITableViewController, UISearchBarDelegate,
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         search(searchText)
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     @IBAction func exitToFeedSceneViewController(segue:UIStoryboardSegue) {
         

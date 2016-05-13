@@ -172,22 +172,64 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
         
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let image = cropPictureToCircle(info[UIImagePickerControllerOriginalImage] as! UIImage)
         
         let imageData = UIImageJPEGRepresentation(image, 0.05)
         let imageFile = PFFile(name:"image.jpg", data:imageData!)
 
         
        
+
         
-        picSlot.file = imageFile
+        
         let currentUser = PFUser.currentUser()
+        
         if currentUser != nil {
             PFUser.currentUser()?.setObject(imageFile!, forKey: "userPic")
         }
         
+        
+        
+        
+        
+        
         self.dismissViewControllerAnimated(false, completion: nil)
-
+        
+        
+    }
+    
+    func cropPictureToCircle(image : UIImage) -> UIImage {
+        
+        let userPinImg : UIImage = UIImage(named: "EmptyPic")!
+        UIGraphicsBeginImageContextWithOptions(userPinImg.size, false, 0.0);
+        
+        userPinImg.drawInRect(CGRect(origin: CGPointZero, size: userPinImg.size))
+        
+        let roundRect : CGRect = CGRectMake(2, 2, userPinImg.size.width-4, userPinImg.size.width-4)
+        
+        let myUserImgView = UIImageView(frame: roundRect)
+        myUserImgView.image = image
+        //        myUserImgView.backgroundColor = UIColor.blackColor()
+        //        myUserImgView.layer.borderColor = UIColor.whiteColor().CGColor
+        //        myUserImgView.layer.borderWidth = 0.5
+        
+        let layer: CALayer = myUserImgView.layer
+        
+        layer.masksToBounds = true
+        layer.cornerRadius = myUserImgView.frame.size.width/2
+        
+        UIGraphicsBeginImageContextWithOptions(myUserImgView.bounds.size, myUserImgView.opaque, 0.0)
+        layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let roundedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        roundedImage.drawInRect(roundRect)
+        
+        
+        let resultImg : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return resultImg
         
     }
     
