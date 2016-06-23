@@ -13,36 +13,40 @@ import Parse
 class LogInViewController: UIViewController {
     
     //AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-    
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passField: UITextField!
-
     @IBOutlet weak var alertLabel: UILabel!
-    
     
     @IBAction func loginButtonPress(sender: AnyObject) {
         print("Logging in user...")
         if (emailField.text != "" && passField.text != "") {
             print("Fields are filled")
             print("Begining login")
-            PFUser.logInWithUsernameInBackground(emailField.text!, password:passField.text!) {
+        PFUser.logInWithUsernameInBackground(emailField.text!,password:passField.text!) {
                 (user: PFUser?, error: NSError?) -> Void in
                 if user != nil {
                     // Yes, User Exists
                     print("Checking if user is an admin")
-                    if let isAdmin = PFUser.currentUser()?.objectForKey("adminPower") as? Int {
-                        if isAdmin == 1 {
-                            print("User is an admin")
-                            print("Logging in as admin")
-                            self.performSegueWithIdentifier("toAdminPage", sender: self)
-                            print("Finished logging in")
-                        }else{
-                            print("User is not an admin")
-                            print("Logging in as non-admin")
-                            self.performSegueWithIdentifier("toHomePage", sender: self)
-                            print("Finished logging in")
+                    let user = PFUser.currentUser()
+                    if user?["emailVerified"] as? Bool == true {
+                        if let isAdmin = PFUser.currentUser()?.objectForKey("adminPower") as? Int {
+                            if isAdmin == 1 {
+                                print("User is an admin")
+                                print("Logging in as admin")
+                                self.performSegueWithIdentifier("toAdminPage", sender: self)
+                                print("Finished logging in")
+                            }else{
+                                print("User is not an admin")
+                                print("Logging in as non-admin")
+                                self.performSegueWithIdentifier("toHomePage", sender: self)
+                                print("Finished logging in")
+                            }
                         }
+                    }else{
+                        self.alertLabel.text = "Please verify your email before logging in!"
+                        PFUser.logOut()
                     }
+                    
                     
                 } else {
                     print("No User with that username and password")
@@ -55,42 +59,15 @@ class LogInViewController: UIViewController {
             //Either of the fields is empty, notify user
             alertLabel.text = "Please fill in all fields!"
         }
-        
     }
-    
-    
+
     @IBAction func exitToLoginViewController(segue:UIStoryboardSegue) {
-        
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        // Do any additional setup after loading the view.
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
-    
-    
-    
-    
-    
-
-   
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-
-
 }

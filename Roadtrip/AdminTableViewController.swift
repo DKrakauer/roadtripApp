@@ -9,8 +9,8 @@ import UIKit
 import Parse
 import ParseUI
 
-class TableViewController:UITableViewController, UISearchBarDelegate,
-    UISearchDisplayDelegate{
+class AdminTableViewController:UITableViewController, UISearchBarDelegate,
+UISearchDisplayDelegate{
     
     @IBOutlet weak var searchBar: UISearchBar!
     var searchActive : Bool = false
@@ -33,7 +33,7 @@ class TableViewController:UITableViewController, UISearchBarDelegate,
     
     func search(searchText: String? = nil){
         let query = PFQuery(className: "Location")
-        query.whereKey("adminApproved", equalTo: true)
+        query.whereKey("adminApproved", equalTo: false)
         if(searchText != nil){
             query.whereKey("Name", containsString: searchText)
         }
@@ -75,8 +75,8 @@ class TableViewController:UITableViewController, UISearchBarDelegate,
         if let descrip = obj["Description"] as? String {
             cell2.descriptionHolder = descrip
         }
-        if let tripID = obj.objectId {
-            cell2.tripIDholder = tripID
+        if let ID = obj.objectId {
+            cell2.tripIDholder = ID
         }
         
         
@@ -84,20 +84,19 @@ class TableViewController:UITableViewController, UISearchBarDelegate,
         
         return cell2
     }
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "toDetailScene") {
-            
+            self.navigationController?.navigationBarHidden = true
             
             //Hooking up places-holder values
-            let viewController = segue.destinationViewController as! DetailViewController
+            let viewController = segue.destinationViewController as! AdminDetailViewController
             
             let cell = sender as! CustomPFTableViewCell
             
-            
+            viewController.tripID = cell.tripIDholder
             viewController.tripName = cell.nameTextLabel.text!
             viewController.tripAuthor = cell.authorTextLabel.text!
-            viewController.ObjectIDLocat = cell.tripIDholder
             if let text = cell.numLikes.text {
                 if let textInt = Int(text) {
                     viewController.tripLikes = textInt

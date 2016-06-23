@@ -10,8 +10,8 @@ import UIKit
 import Parse
 
 
-class DetailViewController: UIViewController {
-
+class AdminDetailViewController: UIViewController {
+    
     //IBOutlets
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var likes: UILabel!
@@ -19,15 +19,35 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var descrip: UITextView!
     @IBOutlet weak var scroll: UIScrollView!
     @IBOutlet weak var profilePicture: UIImageView!
-
+    
     
     //Place-Holder Variables
     var tripName = ""
     var tripAuthor = ""
     var tripLikes = 0
     var tripDescrip = ""
-    var ObjectIDLocat = ""
+    var tripID = ""
     
+    //editing this method
+    @IBAction func approveObject(sender: AnyObject) {
+        let query = PFQuery(className: "Location")
+        query.getObjectInBackgroundWithId(tripID) { (objectFound,error) -> Void in
+            if error == nil && objectFound != nil {
+                if let object = objectFound {
+                    object["adminApproved"] = true as Bool
+                }
+                objectFound!.saveInBackground()
+            }
+        }
+    }
+    
+    @IBAction func declineObject(sender: AnyObject) {
+        let query = PFQuery(className: "Location")
+        query.getObjectInBackgroundWithId(tripID) { (objectFound,error) -> Void in
+            objectFound?.deleteEventually()
+            
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -43,16 +63,6 @@ class DetailViewController: UIViewController {
         
         //Image editing
         profilePicture.image = cropPictureToCircle("tempAvatar")
-        
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "toMapView"){
-            print(self.ObjectIDLocat)
-            let vc1 = segue.destinationViewController as! MapsViewController
-            vc1.objectIDlocat = self.ObjectIDLocat
-            
-        }
         
     }
     
@@ -90,10 +100,6 @@ class DetailViewController: UIViewController {
         UIGraphicsEndImageContext()
         
         return resultImg
-        
-    }
-    
-    @IBAction func exitToDetailSceneViewController(segue:UIStoryboardSegue) {
         
     }
 }

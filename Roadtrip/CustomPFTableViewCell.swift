@@ -19,6 +19,7 @@ class CustomPFTableViewCell: UITableViewCell {
     @IBOutlet weak var customFlag: PFImageView!
     
     var descriptionHolder = ""
+    var tripIDholder = ""
     
     func viewDidLoad() {
         

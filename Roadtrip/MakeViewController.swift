@@ -52,6 +52,12 @@ class MakeViewController: UIViewController,
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "toSetLocation"){
+            let vc = segue.destinationViewController as! SetLocationViewController
+            vc.addressField = addreBox.text!
+        }
+    }
     
     
     //Everything below here is for image selection
@@ -69,6 +75,12 @@ class MakeViewController: UIViewController,
         tempThumbnail = info[UIImagePickerControllerOriginalImage] as! UIImage
         self.dismissViewControllerAnimated(false, completion: nil)
     }
+    
+    
+    @IBAction func exitToMakeTripSceneViewController(segue:UIStoryboardSegue) {
+        
+    }
+
     
       
     //End of image selection

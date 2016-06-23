@@ -23,8 +23,15 @@ class OpenPageViewController: UIViewController {
         let currentUser = PFUser.currentUser()
         if currentUser != nil {
             //They have already signed in. Move to Home Page
-            print("Moving to log in view controller")
-            performSegueWithIdentifier("alreadyLoggedIn", sender: AnyObject?())
+            if let isAdmin = PFUser.currentUser()?.objectForKey("adminPower") as? Int {
+                if isAdmin == 1 {
+                    performSegueWithIdentifier("alreadyAdmin", sender: AnyObject?())
+                }else{
+                    print("Moving to log in view controller")
+                    performSegueWithIdentifier("alreadyLoggedIn", sender: AnyObject?())
+                }
+            }
+            
             
         } else {
             //Let them press the log in button

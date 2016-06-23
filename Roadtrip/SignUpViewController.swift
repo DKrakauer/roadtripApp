@@ -1,4 +1,4 @@
-//
+ //
 //  SignUpViewController.swift
 //  Roadtrip
 //
@@ -50,7 +50,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                     (succeeded: Bool, error: NSError?) -> Void in
                     if error == nil {
                         dispatch_async(dispatch_get_main_queue()) {
-                            self.performSegueWithIdentifier("toHomeScreen", sender: self)
+                            PFUser.logOut()
+                        self.performSegueWithIdentifier("accountConfirm", sender: self)
                         }
                     }else{
                         if let message: AnyObject = error!.userInfo["error"] {
@@ -92,6 +93,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func exitToSignUpViewController(segue:UIStoryboardSegue) {
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        scrollView.contentSize.height = 569
     }
     
 
