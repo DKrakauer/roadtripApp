@@ -34,16 +34,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             cityBox.text = currentUser?.objectForKey("cityName") as? String
             Textviews.text = currentUser?.objectForKey("about") as? String
         }
-
-        
         Textviews.delegate = self
         scrollView.contentSize.height = 700
-        
     }
     
-    
     override func viewDidAppear(animated: Bool) {
-        
         let currentUser = PFUser.currentUser()
         if currentUser != nil{
             if let name = currentUser!.objectForKey("realname ") as? String {
@@ -61,38 +56,19 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             if let user = currentUser!.objectForKey("password") as? String {
                 passBox.text = user
             }
-            
-            
-            
             picSlot.image = UIImage(named: "Unloaded")
             if let thumbnail = currentUser?.objectForKey("userPic") as? PFFile {
                 picSlot.file = thumbnail
                 picSlot.loadInBackground()
-                
             }
-            
-            
-           
         }
     }
     
-    
-    
-    
     @IBAction func finishedEditing(sender: AnyObject) {
-        
-        
         let currentUser = PFUser.currentUser()
         currentUser?.saveInBackground()
-        
-        
     }
-        
-    
-    
-    
-    
-    
+
     @IBAction func editingEnded(sender: AnyObject) {
         let currentUser = PFUser.currentUser()
         if(sender as? UITextField == cityBox){
@@ -116,10 +92,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 currentUser?.setObject(self.emailBox.text!, forKey: "username")
             }))
             
-            
-            
             self.presentViewController(alertController, animated: true, completion: nil)
-        
         }
         if(sender as? UITextField == passBox){
             let alertController = UIAlertController(title: "Warning", message:
@@ -131,17 +104,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 currentUser?.setObject(self.passBox.text!, forKey: "password")
             }))
             
-            
-            
             self.presentViewController(alertController, animated: true, completion: nil)
-            
         }
     }
-    
-    
-    
-    
-    
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
     if(text == "\n") {
@@ -158,8 +123,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBAction func DismissKeyboard(sender: AnyObject) {
         self.resignFirstResponder()
     }
-        
-    
     
     @IBAction func selectUser(sender: AnyObject) {
         let photoPicker = UIImagePickerController()
@@ -170,68 +133,41 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        
-        
         let image = cropPictureToCircle(info[UIImagePickerControllerOriginalImage] as! UIImage)
         
         let imageData = UIImageJPEGRepresentation(image, 0.05)
         let imageFile = PFFile(name:"image.jpg", data:imageData!)
 
-        
-       
-
-        
-        
         let currentUser = PFUser.currentUser()
-        
         if currentUser != nil {
             PFUser.currentUser()?.setObject(imageFile!, forKey: "userPic")
         }
         
-        
-        
-        
-        
-        
         self.dismissViewControllerAnimated(false, completion: nil)
-        
-        
     }
     
     func cropPictureToCircle(image : UIImage) -> UIImage {
-        
         let userPinImg : UIImage = UIImage(named: "EmptyPic")!
         UIGraphicsBeginImageContextWithOptions(userPinImg.size, false, 0.0);
-        
         userPinImg.drawInRect(CGRect(origin: CGPointZero, size: userPinImg.size))
-        
         let roundRect : CGRect = CGRectMake(2, 2, userPinImg.size.width-4, userPinImg.size.width-4)
-        
         let myUserImgView = UIImageView(frame: roundRect)
         myUserImgView.image = image
         //        myUserImgView.backgroundColor = UIColor.blackColor()
         //        myUserImgView.layer.borderColor = UIColor.whiteColor().CGColor
         //        myUserImgView.layer.borderWidth = 0.5
-        
         let layer: CALayer = myUserImgView.layer
-        
         layer.masksToBounds = true
         layer.cornerRadius = myUserImgView.frame.size.width/2
-        
         UIGraphicsBeginImageContextWithOptions(myUserImgView.bounds.size, myUserImgView.opaque, 0.0)
         layer.renderInContext(UIGraphicsGetCurrentContext()!)
         let roundedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
         roundedImage.drawInRect(roundRect)
-        
         
         let resultImg : UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         return resultImg
-        
     }
-    
-    
 }

@@ -1037,17 +1037,6 @@ We are committed to conducting our business in accordance with these principles 
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ux1-BU-rfS">
-                                                <rect key="frame" x="20" y="61" width="322" height="84"/>
-                                                <color key="backgroundColor" red="0.88960242146596857" green="0.88960242146596857" blue="0.88960242146596857" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
-                                                <state key="normal" title="SELECT USERPIC">
-                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="selectUser:" destination="X0T-uI-JGU" eventType="touchUpInside" id="xbv-7g-6sl"/>
-                                                </connections>
-                                            </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Loading..." textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kwR-5L-4Uz">
                                                 <rect key="frame" x="94" y="161" width="231" height="30"/>
                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
@@ -1114,6 +1103,17 @@ We are committed to conducting our business in accordance with these principles 
                                                     <constraint firstAttribute="height" constant="68" id="Ixm-7H-XM4"/>
                                                 </constraints>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ux1-BU-rfS">
+                                                <rect key="frame" x="20" y="61" width="322" height="84"/>
+                                                <color key="backgroundColor" red="0.88960242146596857" green="0.88960242146596857" blue="0.88960242146596857" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
+                                                <state key="normal" title="SELECT USERPIC">
+                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="selectUser:" destination="X0T-uI-JGU" eventType="touchUpInside" id="xbv-7g-6sl"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
