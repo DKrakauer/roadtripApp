@@ -153,7 +153,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let roundRect : CGRect = CGRectMake(2, 2, userPinImg.size.width-4, userPinImg.size.width-4)
         let myUserImgView = UIImageView(frame: roundRect)
         myUserImgView.image = image
-        //        myUserImgView.backgroundColor = UIColor.blackColor()
+        myUserImgView.backgroundColor = UIColor.clearColor()
         //        myUserImgView.layer.borderColor = UIColor.whiteColor().CGColor
         //        myUserImgView.layer.borderWidth = 0.5
         let layer: CALayer = myUserImgView.layer
