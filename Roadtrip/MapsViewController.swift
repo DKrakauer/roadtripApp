@@ -14,6 +14,7 @@ import ParseUI
 class MapsViewController: UIViewController {
     
     var objectIDlocat=""
+    var objectHolder:PFObject?
     
     @IBOutlet weak var mapView: MKMapView!
     override func viewDidLoad() {
@@ -23,8 +24,8 @@ class MapsViewController: UIViewController {
             (locat: PFObject?, error: NSError?) -> Void in
             if error == nil && locat != nil {
                 if let objectPoints = locat!.objectForKey("Address") as? PFGeoPoint {
-                    let latitude1 = objectPoints.latitude
-                    let longitude1 = objectPoints.longitude
+                    let latitude1 = objectPoints.latitude * 2
+                    let longitude1 = objectPoints.longitude * 2
                     let initialLocation = CLLocation(latitude: latitude1, longitude: longitude1)
                     let placeMarker = tripMarker(name: locat?.objectForKey("Name") as! String, subtitle: locat?.objectForKey("authorName") as! String, descriptiont: locat?.objectForKey("Description") as! String, adminCleared: locat?.objectForKey("adminApproved") as! Bool, coordinate: initialLocation.coordinate, numLikes: locat?.objectForKey("Likes") as! Int)
                     self.mapView.addAnnotation(placeMarker)

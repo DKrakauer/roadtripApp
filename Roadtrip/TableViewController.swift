@@ -72,6 +72,11 @@ class TableViewController:UITableViewController, UISearchBarDelegate,
             cell2.customFlag.file = thumbnail
             cell2.customFlag.loadInBackground()
         }
+        if let thumbnail = obj["authorPic"] as? PFFile {
+            cell2.authorSlot.file = thumbnail
+            cell2.authorSlot.loadInBackground()
+        }
+        
         if let descrip = obj["Description"] as? String {
             cell2.descriptionHolder = descrip
         }
@@ -94,7 +99,7 @@ class TableViewController:UITableViewController, UISearchBarDelegate,
             
             let cell = sender as! CustomPFTableViewCell
             
-            
+            viewController.profilePicture.file = cell.authorSlot.file
             viewController.tripName = cell.nameTextLabel.text!
             viewController.tripAuthor = cell.authorTextLabel.text!
             viewController.ObjectIDLocat = cell.tripIDholder

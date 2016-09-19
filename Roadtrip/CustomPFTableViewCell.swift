@@ -16,6 +16,7 @@ class CustomPFTableViewCell: UITableViewCell {
     @IBOutlet weak var nameTextLabel: UILabel!
     @IBOutlet weak var authorTextLabel: UILabel!
     @IBOutlet weak var numLikes: UILabel!
+    @IBOutlet weak var authorSlot: PFImageView!
     @IBOutlet weak var customFlag: PFImageView!
     
     var descriptionHolder = ""

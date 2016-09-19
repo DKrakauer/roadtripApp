@@ -10,16 +10,11 @@ import UIKit
 
 class imageUtil: NSObject {
     
-    static func cropToSquare(image originalImage: UIImage) -> UIImage {
+    static func cropToSquare(image originalImage: UIImage, posX : CGFloat, posY : CGFloat, width : CGFloat, height : CGFloat) -> UIImage {
         // Create a copy of the image without the imageOrientation property so it is in its native orientation (landscape)
         let contextImage: UIImage = UIImage(CGImage: originalImage.CGImage!)
         
         // Get the size of the contextImage
-        
-        let posX: CGFloat = 500
-        let posY: CGFloat = 500
-        let width: CGFloat = 298
-        let height: CGFloat = 193
         
         // Check to see which length is the longest and create the offset based on that length, then set the width and height of our rect
         

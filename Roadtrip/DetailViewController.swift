@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import ParseUI
 
 
 class DetailViewController: UIViewController {
@@ -18,7 +19,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var author: UILabel!
     @IBOutlet weak var descrip: UITextView!
     @IBOutlet weak var scroll: UIScrollView!
-    @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var profilePicture: PFImageView!
 
     
     //Place-Holder Variables
@@ -27,6 +28,7 @@ class DetailViewController: UIViewController {
     var tripLikes = 0
     var tripDescrip = ""
     var ObjectIDLocat = ""
+    
     
     
     
@@ -41,6 +43,7 @@ class DetailViewController: UIViewController {
         author.text = tripAuthor
         descrip.text = tripDescrip
         
+        
         //Image editing
         profilePicture.image = cropPictureToCircle("tempAvatar")
         
@@ -51,6 +54,7 @@ class DetailViewController: UIViewController {
             print(self.ObjectIDLocat)
             let vc1 = segue.destinationViewController as! MapsViewController
             vc1.objectIDlocat = self.ObjectIDLocat
+            
             
         }
         

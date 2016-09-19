@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		406485F3CCBC8754484E7B5B /* Pods_RoadtripTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F02A4B0AA764C421F31434 /* Pods_RoadtripTests.framework */; };
+		68DA05ACE4CB11FF78B45072 /* Pods_Roadtrip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E46340B13E6930157EEEF6 /* Pods_Roadtrip.framework */; };
 		7A03D4F51C403884007F8023 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801A79E61B3CCD3E004EC713 /* ParseUI.framework */; };
+		7A13F75C1D46BA7800A30742 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A13F75B1D46BA7800A30742 /* SVProgressHUD.framework */; };
 		7A1A163C1D0622A400538153 /* TOUViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1A163B1D0622A400538153 /* TOUViewController.swift */; };
 		7A28B0B21C8A37CE00FC65E5 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A28B0B01C8A37CE00FC65E5 /* Fabric.framework */; };
 		7A28B0B31C8A37CF00FC65E5 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A28B0B11C8A37CE00FC65E5 /* Crashlytics.framework */; };
@@ -86,6 +89,7 @@
 
 /* Begin PBXFileReference section */
 		1DD8F127417C3B5724183E2B /* Pods-RoadtripTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoadtripTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RoadtripTests/Pods-RoadtripTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7A13F75B1D46BA7800A30742 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = "Pods/../build/Debug-iphoneos/SVProgressHUD/SVProgressHUD.framework"; sourceTree = "<group>"; };
 		7A1A163B1D0622A400538153 /* TOUViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOUViewController.swift; sourceTree = "<group>"; };
 		7A28B0B01C8A37CE00FC65E5 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		7A28B0B11C8A37CE00FC65E5 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 		8A19F2BA8692D78DA6A1B705 /* Pods-Roadtrip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roadtrip.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Roadtrip/Pods-Roadtrip.debug.xcconfig"; sourceTree = "<group>"; };
 		ED412FAC8B0CE905A6FABD90 /* Pods-RoadtripTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoadtripTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RoadtripTests/Pods-RoadtripTests.release.xcconfig"; sourceTree = "<group>"; };
 		F1B2984D84A0BE0FCE1994E6 /* Pods-Roadtrip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roadtrip.release.xcconfig"; path = "Pods/Target Support Files/Pods-Roadtrip/Pods-Roadtrip.release.xcconfig"; sourceTree = "<group>"; };
+		F4E46340B13E6930157EEEF6 /* Pods_Roadtrip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Roadtrip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9F02A4B0AA764C421F31434 /* Pods_RoadtripTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoadtripTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A13F75C1D46BA7800A30742 /* SVProgressHUD.framework in Frameworks */,
 				7A28B0B51C8A4FEA00FC65E5 /* MapKit.framework in Frameworks */,
 				80BD4C1D1B338E2C007794E6 /* CoreLocation.framework in Frameworks */,
 				7A37C72F1C3F89DE009FB9CA /* libz.tbd in Frameworks */,
@@ -169,6 +176,7 @@
 				80BD4C0D1B338DC5007794E6 /* Bolts.framework in Frameworks */,
 				80BD4C0E1B338DCA007794E6 /* Parse.framework in Frameworks */,
 				7A03D4F51C403884007F8023 /* ParseUI.framework in Frameworks */,
+				68DA05ACE4CB11FF78B45072 /* Pods_Roadtrip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +186,7 @@
 			files = (
 				80BD4C0B1B338D48007794E6 /* Parse.framework in Frameworks */,
 				80BD4C091B338D48007794E6 /* Bolts.framework in Frameworks */,
+				406485F3CCBC8754484E7B5B /* Pods_RoadtripTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +221,7 @@
 		80BD4C0C1B338D7F007794E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A13F75B1D46BA7800A30742 /* SVProgressHUD.framework */,
 				7A28B0B41C8A4FEA00FC65E5 /* MapKit.framework */,
 				7A28B0B01C8A37CE00FC65E5 /* Fabric.framework */,
 				7A28B0B11C8A37CE00FC65E5 /* Crashlytics.framework */,
@@ -228,6 +238,8 @@
 				80BD4C191B338E2C007794E6 /* SystemConfiguration.framework */,
 				80BD4C061B338D48007794E6 /* Bolts.framework */,
 				80BD4C071B338D48007794E6 /* Parse.framework */,
+				F4E46340B13E6930157EEEF6 /* Pods_Roadtrip.framework */,
+				F9F02A4B0AA764C421F31434 /* Pods_RoadtripTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -648,8 +660,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Theresa Krakauer (V94755QJND)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Theresa Krakauer (V94755QJND)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Brushfire Mobile (4XWE232KT8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Brushfire Mobile (4XWE232KT8)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -695,8 +707,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Theresa Krakauer (V94755QJND)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Theresa Krakauer (V94755QJND)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Brushfire Mobile (4XWE232KT8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Brushfire Mobile (4XWE232KT8)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -727,10 +739,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SVProgressHUD",
 				);
 				INFOPLIST_FILE = Roadtrip/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.davidKrakauer.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Brushfire.Roadtrip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -749,10 +762,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					/Users/rkrakauer/Downloads,
+					"$(PROJECT_DIR)/build/Debug-iphoneos/SVProgressHUD",
 				);
 				INFOPLIST_FILE = Roadtrip/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.davidKrakauer.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Brushfire.Roadtrip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

@@ -11,7 +11,6 @@ import Parse
 import Bolts
 import Fabric
 import Crashlytics
-import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // [Optional] Power your app with Local Datastore.
         //Google maps
-        GMSServices.provideAPIKey("AIzaSyB9xibsqPfj1FAwTBtZe72iCohvBp6dvJ8")
         
         // Initialize Parse.
         Parse.setApplicationId("VU9Vj8cyQFvBwYht1rz7eiEjvjmrD3nVp6bIgtCE",

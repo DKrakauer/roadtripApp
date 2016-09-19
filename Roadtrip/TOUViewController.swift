@@ -18,8 +18,7 @@ class TOUViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.contentSize = contentView.frame.size
-        
+        scrollView.contentSize.height = 1550
         // Do any additional setup after loading the view.
     }
     
